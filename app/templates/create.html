@@ -1,0 +1,52 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/form.css' %}">
+<div class="form-wrapper">
+    <form method="post">
+        {% csrf_token %}
+        
+        <div class="form-row">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" required>
+        </div>
+
+        <div class="form-row">
+            <label for="phone">Phone</label>
+            <input type="number" name="phone" id="phone" required>
+        </div>
+
+        <div class="form-row">
+            <label for="aadhar">Aadhar Number</label>
+            <input type="number" name="aadhar" id="aadhar" required>
+        </div>
+
+        <div class="form-row">
+            <label>Gender</label>
+            <label><input type="radio" name="gender" value="Male" required> Male</label>
+            <label><input type="radio" name="gender" value="Female" required> Female</label>
+        </div>
+
+        <div class="form-row">
+            <label for="dob">Date of Birth</label>
+            <input type="date" name="dob" id="dob" required>
+        </div>
+
+        <div class="form-row">
+            <label for="acc_type">Account Type</label>
+            <select name="acc_type" id="acc_type" required>
+                <option value="saving">Savings</option>
+                <option value="current">Current</option>
+            </select>
+        </div>
+
+        <div class="form-row">
+            <label for="address">Address</label>
+            <textarea name="address" id="address" rows="3" required></textarea>
+        </div>
+
+        <button type="submit">SUBMIT</button>
+        <p>{{ msg }}</p>
+    </form>
+</div>
+{% endblock content %}

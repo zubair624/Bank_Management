@@ -1,0 +1,46 @@
+{% extends 'main.html' %}
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<div class="container" >
+  <div class="card">
+    <a href="{% url 'create' %}">
+      <img src="{% static 'images/1.png' %}" alt="">
+      <p>Create Account</p>
+    </a>
+  </div>
+  <div class="card">
+    <a href="{% url 'pin' %}">
+      <img src="{% static 'images/2.png' %}" alt="">
+      <p>Change PIN</p>
+    </a>
+  </div>
+  <div class="card">
+    <a href="{% url 'bal' %}">
+      <img src="{% static 'images/3.png' %}" alt="">
+      <p>Balance</p>
+    </a>
+  </div>
+  <div class="card">
+    <a href="{% url 'deposit' %}">
+      <img src="{% static 'images/4.png' %}" alt="">
+      <p>Deposit</p>
+    </a>
+  </div>
+  <div class="card">
+    <a href="{% url 'withdrawl' %}">
+      <img src="{% static 'images/5.png' %}" alt="">
+      <p>Withdraw</p>
+    </a>
+  </div>
+  <div class="card">
+    <a href="{% url 'transfer' %}">
+      <img src="{% static 'images/6.png' %}" alt="">
+      <p>Transfer</p>
+    </a>
+  </div>
+</div>
+
+{% endblock content %}

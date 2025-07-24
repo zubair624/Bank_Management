@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/form.css' %}">
+<div class="form-wrapper">
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-row">
+            <label>From Account</label>
+            <input type="number" name="facc" required>
+        </div>
+        <div class="form-row">
+            <label>To Account</label>
+            <input type="number" name="tacc" required>
+        </div>
+        <div class="form-row">
+            <label>PIN</label>
+            <input type="password" name="pin" required>
+        </div>
+        <div class="form-row">
+            <label>Amount</label>
+            <input type="number" name="amt" required>
+        </div>
+        <button type="submit">TRANSFER</button>
+        <p>{{ msg }}</p>
+    </form>
+</div>
+{% endblock content %}
